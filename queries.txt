@@ -1,0 +1,18 @@
+-- Show each movie with its country and genres
+SELECT m.title, c.country_name, g.genre_name
+FROM MOVIE m
+JOIN COUNTRY c ON m.country_id = c.country_id
+JOIN MOVIE_GENRE mg ON m.movie_id = mg.movie_id
+JOIN GENRE g ON mg.genre_id = g.genre_id;
+
+-- Show all reviews with the username and movie title
+SELECT u.username, m.title, r.review_text
+FROM REVIEW r
+JOIN USER u ON r.user_id = u.user_id
+JOIN MOVIE m ON r.movie_id = m.movie_id;
+
+-- Show each user's watchlist with movie titles
+SELECT u.username, m.title
+FROM WATCHLIST wl
+JOIN USER u ON wl.user_id = u.user_id
+JOIN MOVIE m ON wl.movie_id = m.movie_id;
