@@ -1,6 +1,8 @@
 CREATE DATABASE dawtDB;
 USE dawtDB;
 
+-- 1.CREATE TABLES --
+
 -- USERS TABLE
 CREATE TABLE USERS (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -45,7 +47,7 @@ CREATE TABLE RATING (
     rating_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT,
     movie_id INT,
-    rating_value DECIMAL(2,1),
+    rating_value DECIMAL(3,1),
     FOREIGN KEY (user_id) REFERENCES USERS(user_id),
     FOREIGN KEY (movie_id) REFERENCES MOVIE(movie_id)
 );
@@ -80,7 +82,7 @@ CREATE TABLE WATCHLIST (
     FOREIGN KEY (movie_id) REFERENCES MOVIE(movie_id)
 );
 
--- 1.INSERT SAMPLE DATA INFO
+-- 2.INSERT SAMPLE DATA INFO
 
 -- USERS --
 INSERT INTO USERS (username, email) VALUES
@@ -155,27 +157,103 @@ INSERT INTO MOVIE (country_id, title, release_date, overview, runtime) VALUES
 (2, 'The Handmaiden', '2016-06-01', 'A con artist targets a wealthy heiress.', 145);
 
 -- MOVIE_GENRE --
+INSERT INTO MOVIE_GENRE VALUES
+(1, 1), (1, 2),
+(2, 2), (2, 3),
+(3, 3), (3, 5),
+(4, 4), (4, 11),
+(5, 1), (5, 3),
+(6, 6), (6, 2),
+(7, 7), (7, 3),
+(8, 8), (8, 2),
+(9, 4), (9, 7),
+(10, 9), (10, 20),
+(11, 8), (11, 2),
+(12, 3), (12, 23),
+(13, 5), (13, 24),
+(14, 11), (14, 6),
+(15, 8), (15, 22),
+(16, 14), (16, 10),
+(17, 4), (17, 1),
+(18, 3), (18, 5),
+(19, 6), (19, 9),
+(20, 7), (20, 3),
+(21, 17), (21, 14),
+(22, 1), (22, 22),
+(23, 3), (23, 23),
+(24, 9), (24, 2);
 
 -- RATING --
+INSERT INTO RATING (user_id, movie_id, rating_value) VALUES
+(1, 1, 9),  (2, 2, 8),  (3, 3, 10),
+(4, 4, 8),  (5, 5, 9),  (6, 6, 7),
+(7, 7, 10), (8, 8, 9),  (9, 9, 8),
+(10, 10, 8),(11, 11, 7), (12, 12, 9),
+(13, 13, 10),(14, 14, 8),(15, 15, 8),
+(16, 16, 7),(17, 17, 8), (18, 18, 8),
+(19, 19, 9),(20, 20, 8), (21, 21, 7),
+(22, 22, 10),(23, 23, 9),(24, 24, 10);
 
 -- REVIEW --
+INSERT INTO REVIEW (user_id, movie_id, review_text) VALUES
+(1, 1, 'Mind-blowing concept and execution!'),
+(2, 2, 'A masterpiece of tension and class commentary.'),
+(3, 3, 'Timeless. Every scene is perfect.'),
+(4, 4, 'Magical and deeply emotional.'),
+(5, 5, 'Visually stunning and heartbreaking.'),
+(6, 6, 'Raw and terrifying. Stayed with me for days.'),
+(7, 7, 'Charming, whimsical and full of heart.'),
+(8, 8, 'The greatest superhero film ever made.'),
+(9, 9, 'Beautiful animation and a touching story.'),
+(10, 10, 'Disturbing and brilliant. Unforgettable.'),
+(11, 11, 'Relentless energy from start to finish.'),
+(12, 12, 'A love letter to cinema itself.'),
+(13, 13, 'Dialogue like no other film ever made.'),
+(14, 14, 'Dark and haunting. Del Toro at his best.'),
+(15, 15, 'Pure adrenaline. Incredible practical effects.'),
+(16, 16, 'A quiet epic that deserves more recognition.'),
+(17, 17, 'Groundbreaking animation even today.'),
+(18, 18, 'Gritty, honest and deeply human.'),
+(19, 19, 'Smart, scary and socially important.'),
+(20, 20, 'Emotionally devastating and beautifully shot.'),
+(21, 21, 'Epic in every sense of the word.'),
+(22, 22, 'A visionary film ahead of its time.'),
+(23, 23, 'Quiet, poetic and profoundly moving.'),
+(24, 24, 'Twisty and seductive. Park Chan-wook is a genius.');
 
 -- WATCHLIST --
+INSERT INTO WATCHLIST (user_id, movie_id) VALUES
+(1, 2), (2, 3), (3, 4), (4, 5),
+(5, 6), (6, 7), (7, 8), (8, 9),
+(9, 10), (10, 11), (11, 12), (12, 13),
+(13, 14), (14, 15), (15, 16), (16, 17),
+(17, 18), (18, 19), (19, 20), (20, 21),
+(21, 22), (22, 23), (23, 24), (24, 1);
 
 -- WATCHLOG --
+INSERT INTO WATCHLOG (user_id, movie_id, watch_date, rewatch) VALUES
+(1, 1, '2024-01-10', FALSE), (2, 2, '2024-01-15', FALSE),
+(3, 3, '2024-01-20', TRUE),  (4, 4, '2024-02-01', FALSE),
+(5, 5, '2024-02-05', FALSE), (6, 6, '2024-02-10', FALSE),
+(7, 7, '2024-02-14', TRUE),  (8, 8, '2024-02-20', FALSE),
+(9, 9, '2024-03-01', FALSE), (10, 10, '2024-03-05', TRUE),
+(11, 11, '2024-03-10', FALSE),(12, 12, '2024-03-15', FALSE),
+(13, 13, '2024-03-20', TRUE), (14, 14, '2024-03-25', FALSE),
+(15, 15, '2024-04-01', FALSE),(16, 16, '2024-04-05', FALSE),
+(17, 17, '2024-04-08', TRUE), (18, 18, '2024-04-10', FALSE),
+(19, 19, '2024-04-12', FALSE),(20, 20, '2024-04-14', FALSE),
+(21, 21, '2024-04-16', TRUE), (22, 22, '2024-04-18', FALSE),
+(23, 23, '2024-04-20', FALSE),(24, 24, '2024-04-22', FALSE);
 
 
-
+-- TEST QUERIES TO SEE IF TABLES OUTPUT CORRECTLY --
 SELECT * FROM USERS;
 SELECT * FROM GENRE;
 SELECT * FROM COUNTRY;
 SELECT * FROM MOVIE;
-
-
-DELETE FROM GENRE
-WHERE genre_id > 24;
-
-ALTER TABLE GENRE AUTO_INCREMENT = 1;
-SELECT COUNT(*) FROM GENRE;
-
+SELECT * FROM MOVIE_GENRE;
+SELECT * FROM RATING;
+SELECT * FROM REVIEW;
+SELECT * FROM WATCHLIST;
+SELECT * FROM WATCHLOG;
 
