@@ -82,9 +82,9 @@ CREATE TABLE WATCHLIST (
     FOREIGN KEY (movie_id) REFERENCES MOVIE(movie_id)
 );
 
--- 2.INSERT SAMPLE DATA INFO
+-- 2.INSERT SAMPLE DATA INFO --
 
--- USERS --
+-- USERS
 INSERT INTO USERS (username, email) VALUES
 ('john doe','jd142@yahoo.com'),
 ('jane doe','jd134@yahoo.com'),
@@ -111,7 +111,7 @@ INSERT INTO USERS (username, email) VALUES
 ('lilly','pantherlilly360@gmail.com'),
 ('marco','marco.polo@gmail.com');
 
--- COUNTRY --
+-- COUNTRY
 INSERT INTO COUNTRY (country_name) VALUES
 ('USA'), ('South Korea'), ('Japan'), ('United Kingdom'),
 ('France'), ('Germany'), ('Italy'), ('Spain'),
@@ -120,7 +120,7 @@ INSERT INTO COUNTRY (country_name) VALUES
 ('Ireland'), ('New Zealand'), ('Argentina'), ('Thailand'),
 ('Nigeria'), ('Russia'), ('Portugal'), ('Austria');
 
--- GENRE --
+-- GENRE
 INSERT INTO GENRE (genre_name) VALUES
 ('Sci-Fi'), ('Thriller'), ('Drama'), ('Animation'),
 ('Crime'), ('Horror'), ('Romance'), ('Action'),
@@ -129,7 +129,7 @@ INSERT INTO GENRE (genre_name) VALUES
 ('Sports'), ('War'), ('Biographical'), ('Psychological'),
 ('Supernatural'), ('Dystopian'), ('Coming-of-Age'), ('Dark Comedy');
 
--- MOVIE --
+-- MOVIE
 INSERT INTO MOVIE (country_id, title, release_date, overview, runtime) VALUES
 (1, 'Inception', '2010-07-16', 'A thief who enters dreams.', 148),
 (2, 'Parasite', '2019-05-30', 'A class conflict thriller.', 132),
@@ -156,7 +156,7 @@ INSERT INTO MOVIE (country_id, title, release_date, overview, runtime) VALUES
 (1, 'Moonlight', '2016-10-21', 'A young mans journey of self-discovery.', 111),
 (2, 'The Handmaiden', '2016-06-01', 'A con artist targets a wealthy heiress.', 145);
 
--- MOVIE_GENRE --
+-- MOVIE_GENRE
 INSERT INTO MOVIE_GENRE VALUES
 (1, 1), (1, 2),
 (2, 2), (2, 3),
@@ -183,7 +183,7 @@ INSERT INTO MOVIE_GENRE VALUES
 (23, 3), (23, 23),
 (24, 9), (24, 2);
 
--- RATING --
+-- RATING
 INSERT INTO RATING (user_id, movie_id, rating_value) VALUES
 (1, 1, 9),  (2, 2, 8),  (3, 3, 10),
 (4, 4, 8),  (5, 5, 9),  (6, 6, 7),
@@ -194,7 +194,7 @@ INSERT INTO RATING (user_id, movie_id, rating_value) VALUES
 (19, 19, 9),(20, 20, 8), (21, 21, 7),
 (22, 22, 10),(23, 23, 9),(24, 24, 10);
 
--- REVIEW --
+-- REVIEW
 INSERT INTO REVIEW (user_id, movie_id, review_text) VALUES
 (1, 1, 'Mind-blowing concept and execution!'),
 (2, 2, 'A masterpiece of tension and class commentary.'),
@@ -221,7 +221,7 @@ INSERT INTO REVIEW (user_id, movie_id, review_text) VALUES
 (23, 23, 'Quiet, poetic and profoundly moving.'),
 (24, 24, 'Twisty and seductive. Park Chan-wook is a genius.');
 
--- WATCHLIST --
+-- WATCHLIST
 INSERT INTO WATCHLIST (user_id, movie_id) VALUES
 (1, 2), (2, 3), (3, 4), (4, 5),
 (5, 6), (6, 7), (7, 8), (8, 9),
@@ -230,7 +230,7 @@ INSERT INTO WATCHLIST (user_id, movie_id) VALUES
 (17, 18), (18, 19), (19, 20), (20, 21),
 (21, 22), (22, 23), (23, 24), (24, 1);
 
--- WATCHLOG --
+-- WATCHLOG
 INSERT INTO WATCHLOG (user_id, movie_id, watch_date, rewatch) VALUES
 (1, 1, '2024-01-10', FALSE), (2, 2, '2024-01-15', FALSE),
 (3, 3, '2024-01-20', TRUE),  (4, 4, '2024-02-01', FALSE),
