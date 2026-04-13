@@ -33,30 +33,11 @@ INSERT INTO GENRE (genre_name) VALUES
 ('Supernatural'), ('Dystopian'), ('Coming-of-Age'), ('Dark Comedy');
 
 INSERT INTO `COUNTRY` (country_id, country_name) VALUES
-(1, 'USA'),
-(2, 'South Korea'),
-(3, 'Japan'),
-(4, 'UK'),
-(5, 'France'),
-(6, 'Germany'),
-(7, 'Italy'),
-(8, 'Mexico'),
-(9, 'Australia'),
-(10, 'Canada'),
-(11, 'Spain'),
-(12, 'India'),
-(13, 'Brazil'),
-(14, 'South Africa'),
-(15, 'New Zealand'),
-(16, 'South Korea'),
-(17, 'Thailand'),
-(18, 'Sweden'),
-(19, 'Ireland'),
-(20, 'Norway'),
-(21, 'Denmark'),
-(22, 'Netherlands'),
-(23, 'Argentina'),
-(24, 'Greece');
+(1, 'USA'), (2, 'South Korea'), (3, 'Japan'), (4, 'UK'), (5, 'France'),
+(6, 'Germany'), (7, 'Italy'), (8, 'Mexico'), (9, 'Australia'), (10, 'Canada'),
+(11, 'Spain'), (12, 'India'), (13, 'Brazil'), (14, 'South Africa'), (15, 'New Zealand'),
+(16, 'Egypt'), (17, 'Thailand'), (18, 'Sweden'), (19, 'Ireland'), (20, 'Norway'),
+(21, 'Denmark'), (22, 'Netherlands'), (23, 'Argentina'), (24, 'Greece');
 
 INSERT INTO MOVIE (country_id, title, release_date, overview, runtime) VALUES
 (1, 'Inception', '2010-07-16', 'A thief who enters dreams.', 148),
@@ -72,7 +53,7 @@ INSERT INTO MOVIE (country_id, title, release_date, overview, runtime) VALUES
 (6, 'Run Lola Run', '1998-08-20', 'A woman has 20 minutes to save her boyfriend.', 81),
 (7, 'Cinema Paradiso', '1988-11-17', 'A filmmaker recalls his childhood love of film.', 155),
 (1, 'Pulp Fiction', '1994-10-14', 'Interconnected crime stories in LA.', 154),
-(8, 'Pan\'s Labyrinth', '2006-10-11', 'A girl escapes into a dark fantasy world.', 118),
+(8, 'Pan''s Labyrinth', '2006-10-11', 'A girl escapes into a dark fantasy world.', 118),
 (9, 'Mad Max: Fury Road', '2015-05-15', 'A chase across a post-apocalyptic wasteland.', 120),
 (10, 'Atanarjuat', '2001-06-08', 'An Inuit legend brought to life.', 172),
 (3, 'Akira', '1988-07-16', 'A biker gang in Neo-Tokyo uncovers dark powers.', 124),
@@ -84,31 +65,13 @@ INSERT INTO MOVIE (country_id, title, release_date, overview, runtime) VALUES
 (1, 'Moonlight', '2016-10-21', 'A young mans journey of self-discovery.', 111),
 (2, 'The Handmaiden', '2016-06-01', 'A con artist targets a wealthy heiress.', 145);
 
-INSERT INTO MOVIE_GENRE VALUES
-(1, 1), (1, 2),
-(2, 2), (2, 3),
-(3, 3), (3, 5),
-(4, 4), (4, 11),
-(5, 1), (5, 3),
-(6, 6), (6, 2),
-(7, 7), (7, 3),
-(8, 8), (8, 2),
-(9, 4), (9, 7),
-(10, 9), (10, 20),
-(11, 8), (11, 2),
-(12, 3), (12, 23),
-(13, 5), (13, 24),
-(14, 11), (14, 6),
-(15, 8), (15, 22),
-(16, 14), (16, 10),
-(17, 4), (17, 1),
-(18, 3), (18, 5),
-(19, 6), (19, 9),
-(20, 7), (20, 3),
-(21, 17), (21, 14),
-(22, 1), (22, 22),
-(23, 3), (23, 23),
-(24, 9), (24, 2);
+INSERT INTO MOVIE_GENRE (movie_id, genre_id) VALUES
+(1, 1), (1, 2), (2, 2), (2, 3), (3, 3), (3, 5), (4, 4), (4, 11),
+(5, 1), (5, 3), (6, 6), (6, 2), (7, 7), (7, 3), (8, 8), (8, 2),
+(9, 4), (9, 7), (10, 9), (10, 20), (11, 8), (11, 2), (12, 3), (12, 23),
+(13, 5), (13, 24), (14, 11), (14, 6), (15, 8), (15, 22), (16, 14), (16, 10),
+(17, 4), (17, 1), (18, 3), (18, 5), (19, 6), (19, 9), (20, 7), (20, 3),
+(21, 17), (21, 14), (22, 1), (22, 22), (23, 3), (23, 23), (24, 9), (24, 2);
 
 INSERT INTO WATCHLOG (user_id, movie_id, watch_date, rewatch) VALUES
 (1, 1, '2024-01-10', FALSE), (2, 2, '2024-01-15', FALSE),
@@ -168,3 +131,16 @@ INSERT INTO WATCHLIST (user_id, movie_id) VALUES
 (17, 18), (18, 19), (19, 20), (20, 21),
 (21, 22), (22, 23), (23, 24), (24, 1);
 
+-- IF YOU NEED TO RESET EVERYTHING RUN THIS BELOW !!!!
+
+SET FOREIGN_KEY_CHECKS = 0;
+TRUNCATE TABLE WATCHLIST;
+TRUNCATE TABLE REVIEW;
+TRUNCATE TABLE RATING;
+TRUNCATE TABLE WATCHLOG;
+TRUNCATE TABLE MOVIE_GENRE;
+TRUNCATE TABLE MOVIE;
+TRUNCATE TABLE COUNTRY;
+TRUNCATE TABLE GENRE;
+TRUNCATE TABLE USERS;
+SET FOREIGN_KEY_CHECKS = 1;
