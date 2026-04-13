@@ -1,7 +1,0 @@
-INSERT INTO GENRE (genre_name) VALUES
-('Sci-Fi'), ('Thriller'), ('Drama'), ('Animation'),
-('Crime'), ('Horror'), ('Romance'), ('Action'),
-('Mystery'), ('Adventure'), ('Fantasy'), ('Comedy'),
-('Documentary'), ('Historical'), ('Musical'), ('Western'),
-('Sports'), ('War'), ('Biographical'), ('Psychological'),
-('Supernatural'), ('Dystopian'), ('Coming-of-Age'), ('Dark Comedy');
