@@ -1,7 +1,0 @@
-INSERT INTO COUNTRY (country_name) VALUES
-('USA'), ('South Korea'), ('Japan'), ('United Kingdom'),
-('France'), ('Germany'), ('Italy'), ('Spain'),
-('Australia'), ('Canada'), ('Mexico'), ('India'),
-('China'), ('Brazil'), ('Sweden'), ('Denmark'),
-('Ireland'), ('New Zealand'), ('Argentina'), ('Thailand'),
-('Nigeria'), ('Russia'), ('Portugal'), ('Austria');
