@@ -84,7 +84,7 @@ CREATE TABLE `RATING` (
   `rating_id` int NOT NULL AUTO_INCREMENT,
   `user_id` int DEFAULT NULL,
   `movie_id` int DEFAULT NULL,
-  `rating_value` decimal(2,1) DEFAULT NULL,
+  `rating_value` decimal(3,1) DEFAULT NULL,
   PRIMARY KEY (`rating_id`),
   KEY `user_id` (`user_id`),
   KEY `movie_id` (`movie_id`),
