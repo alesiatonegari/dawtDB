@@ -1,3 +1,10 @@
+-- INSTRUCTIONS:
+-- On the top menu select
+-- Server > Data Import > Import from Self-Contained File > Browse to where you have 'dawtDBschema.sql' saved and select > Start Import
+-- Refresh SCHEMAS and set 'dawt_db_schema' as your default schema
+--
+--
+--
 -- MySQL dump 10.13  Distrib 8.0.45, for macos15 (arm64)
 --
 -- Host: localhost    Database: dawtDB
