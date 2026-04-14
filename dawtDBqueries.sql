@@ -19,7 +19,7 @@ FROM WATCHLIST wl
 JOIN USERS u ON wl.user_id = u.user_id
 JOIN MOVIE m ON wl.movie_id = m.movie_id;
 
--- 4. Movie Summary with Runtime and Details
+-- 4. Movie Summary with Runtime and Country
 SELECT 
     CONCAT(title, ' (', runtime, ' mins)') AS movie_details, 
     c.country_name
