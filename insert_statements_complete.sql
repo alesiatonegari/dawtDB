@@ -1,4 +1,6 @@
--- IF YOU NEED TO RESET EVERYTHING RUN THIS BELOW !!!!
+-- Run this entire file as-is and everything should insert fine.
+-- If there are inaccuracies in the data for any reason, run the section of code below in isolation,
+-- then run the insert statements again.
 
 SET FOREIGN_KEY_CHECKS = 0;
 TRUNCATE TABLE WATCHLIST;
